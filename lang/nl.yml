@@ -1,0 +1,26 @@
+nl:
+  SilverShop\Api\Admin\ApiAdmin:
+    MENUTITLE: 'API'
+  SilverShop\Api\Auth\ApiToken:
+    SINGULARNAME: 'API-token'
+    PLURALNAME: 'API-tokens'
+    Scopes: 'Scopes'
+    ScopeRead: 'Lezen — catalogus, winkelwagen, eigen bestellingen en profiel lezen'
+    ScopeWrite: 'Schrijven — winkelwagen, profiel en adressen wijzigen'
+    ScopeAdmin: 'Beheer — catalogus schrijven (producten aanmaken/wijzigen)'
+    Token: 'Token'
+    CopyNow: 'Kopieer deze token nu — hij wordt niet opnieuw getoond:'
+    Hidden: '(verborgen — maak een nieuwe token aan om te roteren)'
+    db_Title: 'Label'
+    db_Expiry: 'Vervaldatum'
+    has_one_Member: 'Lid'
+  SilverShop\Api\Webhook\WebhookSubscription:
+    SINGULARNAME: 'Webhook'
+    PLURALNAME: 'Webhooks'
+    URLDesc: 'HTTPS-eindpunt dat de ondertekende POST ontvangt.'
+    SecretDesc: 'Optioneel gedeeld geheim om leveringen te ondertekenen (X-SilverShop-Signature).'
+    db_Title: 'Label'
+    db_Event: 'Gebeurtenis'
+    db_URL: 'Eindpunt-URL'
+    db_Secret: 'Ondertekeningsgeheim'
+    db_IsActive: 'Actief'

@@ -1,0 +1,26 @@
+de:
+  SilverShop\Api\Admin\ApiAdmin:
+    MENUTITLE: 'API'
+  SilverShop\Api\Auth\ApiToken:
+    SINGULARNAME: 'API-Token'
+    PLURALNAME: 'API-Tokens'
+    Scopes: 'Berechtigungen'
+    ScopeRead: 'Lesen — Katalog, Warenkorb, eigene Bestellungen und Profil lesen'
+    ScopeWrite: 'Schreiben — Warenkorb, Profil und Adressen ändern'
+    ScopeAdmin: 'Admin — Katalog schreiben (Produkte anlegen/ändern)'
+    Token: 'Token'
+    CopyNow: 'Kopieren Sie diesen Token jetzt — er wird nicht erneut angezeigt:'
+    Hidden: '(verborgen — erstellen Sie einen neuen Token zum Rotieren)'
+    db_Title: 'Bezeichnung'
+    db_Expiry: 'Ablaufdatum'
+    has_one_Member: 'Mitglied'
+  SilverShop\Api\Webhook\WebhookSubscription:
+    SINGULARNAME: 'Webhook'
+    PLURALNAME: 'Webhooks'
+    URLDesc: 'HTTPS-Endpunkt, der den signierten POST empfängt.'
+    SecretDesc: 'Optionales gemeinsames Geheimnis zum Signieren der Zustellungen (X-SilverShop-Signature).'
+    db_Title: 'Bezeichnung'
+    db_Event: 'Ereignis'
+    db_URL: 'Endpunkt-URL'
+    db_Secret: 'Signierungsgeheimnis'
+    db_IsActive: 'Aktiv'

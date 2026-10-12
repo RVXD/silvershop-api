@@ -1,0 +1,10 @@
+---
+Name: silvershop-api-routes
+After:
+  - '#silvershop-routes'
+---
+# Take over core's api/v1 route (its WebServiceController) as a backwards-compatible superset. Overriding the exact
+# same rule key — applied After silvershop-routes — replaces core's handler with the module's ApiController.
+SilverStripe\Control\Director:
+  rules:
+    'api/v1//$Action/$ID': 'SilverShop\Api\Control\ApiController'

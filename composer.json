@@ -1,0 +1,65 @@
+{
+    "name": "silvershop/api",
+    "description": "Headless REST API for SilverShop (SilverStripe CMS 6): catalog/cart/order/customer resources, token auth with scopes, pagination, pluggable resources/serializers and order webhooks. A backwards-compatible superset of core's api/v1.",
+    "type": "silverstripe-vendormodule",
+    "keywords": ["silverstripe", "silvershop", "ecommerce", "api", "rest", "headless", "webhooks"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "SilverShop Contributors",
+            "homepage": "https://github.com/silvershop/silvershop-api/graphs/contributors"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "silverstripe/framework": "^6.0",
+        "silverstripe/cms": "^6.0",
+        "silvershop/core": "^6"
+    },
+    "require-dev": {
+        "cambis/silverstan": "^2.1",
+        "silverstripe/recipe-testing": "^4",
+        "silverstripe/sqlite3": "^4",
+        "squizlabs/php_codesniffer": "^3.0",
+        "symbiote/silverstripe-queuedjobs": "^6"
+    },
+    "suggest": {
+        "symbiote/silverstripe-queuedjobs": "Deliver webhooks as a background job instead of inline during the request.",
+        "silvershop/search": "Exposes the instant product-search bridge at api/v1/search.",
+        "silvershop/brands": "Enriches the product resource with brand fields.",
+        "silvershop/colors": "Enriches the product resource with colour swatches.",
+        "silvershop/reviews": "Enriches the product resource with aggregate rating fields.",
+        "silvershop/product-gallery": "Enriches the product resource with gallery image URLs."
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "stan": "vendor/bin/phpstan analyse --configuration=phpstan.neon --memory-limit=-1",
+        "lint": "vendor/bin/phpcs",
+        "lint:fix": "vendor/bin/phpcbf"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "silverstripe/recipe-plugin": true,
+            "silverstripe/vendor-plugin": true,
+            "php-http/discovery": true
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "6.x-dev"
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "SilverShop\\Api\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SilverShop\\Api\\Tests\\": "tests/php/"
+        }
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

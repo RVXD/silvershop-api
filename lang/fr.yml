@@ -1,0 +1,26 @@
+fr:
+  SilverShop\Api\Admin\ApiAdmin:
+    MENUTITLE: 'API'
+  SilverShop\Api\Auth\ApiToken:
+    SINGULARNAME: 'Jeton API'
+    PLURALNAME: 'Jetons API'
+    Scopes: 'Portées'
+    ScopeRead: 'Lecture — lire le catalogue, le panier, ses commandes et son profil'
+    ScopeWrite: 'Écriture — modifier le panier, le profil et les adresses'
+    ScopeAdmin: 'Admin — écrire le catalogue (créer/modifier des produits)'
+    Token: 'Jeton'
+    CopyNow: 'Copiez ce jeton maintenant — il ne sera plus affiché :'
+    Hidden: '(masqué — créez un nouveau jeton pour le renouveler)'
+    db_Title: 'Libellé'
+    db_Expiry: 'Expiration'
+    has_one_Member: 'Membre'
+  SilverShop\Api\Webhook\WebhookSubscription:
+    SINGULARNAME: 'Webhook'
+    PLURALNAME: 'Webhooks'
+    URLDesc: 'Point de terminaison HTTPS qui recevra le POST signé.'
+    SecretDesc: 'Secret partagé facultatif utilisé pour signer les envois (X-SilverShop-Signature).'
+    db_Title: 'Libellé'
+    db_Event: 'Événement'
+    db_URL: 'URL du point de terminaison'
+    db_Secret: 'Secret de signature'
+    db_IsActive: 'Actif'

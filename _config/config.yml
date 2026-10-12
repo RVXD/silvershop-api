@@ -1,0 +1,83 @@
+---
+Name: silvershop-api
+---
+# Register the bearer-token middleware globally (merges with core framework middlewares).
+SilverStripe\Core\Injector\Injector:
+  SilverStripe\Control\Director:
+    properties:
+      Middlewares:
+        SilverShopApiBearerToken: '%$SilverShop\Api\Auth\BearerTokenMiddleware'
+
+# The resources mounted at api/v1/<name>. Config order is irrelevant to dispatch (keyed by each resource's own name);
+# feature modules add their own resources to this map, guarded by moduleexists.
+SilverShop\Api\Resource\ResourceRegistry:
+  resources:
+    products: '%$SilverShop\Api\Resource\ProductResource'
+    categories: '%$SilverShop\Api\Resource\CategoryResource'
+    variations: '%$SilverShop\Api\Resource\VariationResource'
+    cart: '%$SilverShop\Api\Resource\CartResource'
+    orders: '%$SilverShop\Api\Resource\OrderResource'
+    customer: '%$SilverShop\Api\Resource\CustomerResource'
+
+# Order-lifecycle and product-publish webhooks (inert until a WebhookSubscription / endpoint is configured).
+SilverShop\Model\Order:
+  extensions:
+    - SilverShop\Api\Extension\OrderWebhookExtension
+
+SilverShop\Page\Product:
+  extensions:
+    - SilverShop\Api\Extension\ProductWebhookExtension
+
+---
+Name: silvershop-api-brands
+Only:
+  moduleexists: 'silvershop/brands'
+---
+SilverShop\Api\Serializer\ProductSerializer:
+  extensions:
+    - SilverShop\Api\Enrichment\BrandProductEnrichment
+
+---
+Name: silvershop-api-colors
+Only:
+  moduleexists: 'silvershop/colors'
+---
+SilverShop\Api\Serializer\ProductSerializer:
+  extensions:
+    - SilverShop\Api\Enrichment\ColorProductEnrichment
+
+---
+Name: silvershop-api-reviews
+Only:
+  moduleexists: 'silvershop/reviews'
+---
+SilverShop\Api\Serializer\ProductSerializer:
+  extensions:
+    - SilverShop\Api\Enrichment\ReviewProductEnrichment
+
+---
+Name: silvershop-api-gallery
+Only:
+  moduleexists: 'silvershop/product-gallery'
+---
+SilverShop\Api\Serializer\ProductSerializer:
+  extensions:
+    - SilverShop\Api\Enrichment\GalleryProductEnrichment
+
+---
+Name: silvershop-api-downloads
+Only:
+  moduleexists: 'silvershop/downloads'
+---
+SilverShop\Api\Serializer\ProductSerializer:
+  extensions:
+    - SilverShop\Api\Enrichment\DownloadProductEnrichment
+
+---
+Name: silvershop-api-search
+Only:
+  moduleexists: 'silvershop/search'
+---
+SilverShop\Api\Resource\ResourceRegistry:
+  resources:
+    search: '%$SilverShop\Api\Resource\SearchResource'
