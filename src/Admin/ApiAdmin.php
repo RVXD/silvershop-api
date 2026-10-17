@@ -17,7 +17,7 @@ class ApiAdmin extends ModelAdmin
 
     private static string $menu_title = 'API';
 
-    private static string $menu_icon_class = 'font-icon-connector';
+    private static string $menu_icon_class = 'font-icon-integration';
 
     private static array $managed_models = [
         ApiToken::class,
