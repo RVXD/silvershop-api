@@ -1,4 +1,4 @@
-# silvershop/api
+# silvershop-suite/api
 
 A headless **REST** API for [SilverShop](https://github.com/silvershop/silvershop-core) (SilverStripe CMS 6): read the
 catalog, drive the cart, read orders, manage the customer's own profile/addresses, issue scoped access tokens, and emit
@@ -10,7 +10,7 @@ content negotiation), then layers on new resources, pagination, token auth and w
 `api/v1/cart` consumers keep working — the product payload only *gains* fields.
 
 > **GraphQL is not part of this module.** The REST base is deliberately graphql-free (no `silverstripe/graphql`
-> dependency, no build step). A GraphQL schema is a separate, optional `silvershop/api-graphql` overlay.
+> dependency, no build step). A GraphQL schema is a separate, optional `silvershop-suite/api-graphql` overlay.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ content negotiation), then layers on new resources, pagination, token auth and w
 ## Installation
 
 ```bash
-composer require silvershop/api
+composer require silvershop-suite/api
 ```
 
 Then run `dev/build?flush=1`. The API is mounted at `/api/v1/`.
@@ -70,7 +70,7 @@ header. List endpoints return a bare array body plus pagination headers (`X-Tota
 | GET | `/api/v1/categories/tree` | The nested category tree |
 | GET | `/api/v1/categories/{id\|urlSegment}` | A single category |
 | GET | `/api/v1/variations` / `/variations/{id}` | Variations |
-| GET | `/api/v1/search?q=…` | Product search (requires `silvershop/search`) |
+| GET | `/api/v1/search?q=…` | Product search (requires `silvershop-suite/search`) |
 
 **List params:** `start`, `limit`, `sort` (`sort=Title`, `sort=-BasePrice`, comma-separated), and
 `filter[Field]=value` (products: `Title`, `InternalItemID`, `Model`, `Featured`, and `category` for recursive category

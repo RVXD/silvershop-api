@@ -1,5 +1,5 @@
 {
-    "name": "silvershop/api",
+    "name": "silvershop-suite/api",
     "description": "Headless REST API for SilverShop (SilverStripe CMS 6): catalog/cart/order/customer resources, token auth with scopes, pagination, pluggable resources/serializers and order webhooks. A backwards-compatible superset of core's api/v1.",
     "type": "silverstripe-vendormodule",
     "keywords": ["silverstripe", "silvershop", "ecommerce", "api", "rest", "headless", "webhooks"],
@@ -29,11 +29,11 @@
     },
     "suggest": {
         "symbiote/silverstripe-queuedjobs": "Deliver webhooks as a background job instead of inline during the request.",
-        "silvershop/search": "Exposes the instant product-search bridge at api/v1/search.",
-        "silvershop/brands": "Enriches the product resource with brand fields.",
-        "silvershop/colors": "Enriches the product resource with colour swatches.",
-        "silvershop/reviews": "Enriches the product resource with aggregate rating fields.",
-        "silvershop/product-gallery": "Enriches the product resource with gallery image URLs."
+        "silvershop-suite/search": "Exposes the instant product-search bridge at api/v1/search.",
+        "silvershop-suite/brands": "Enriches the product resource with brand fields.",
+        "silvershop-suite/colors": "Enriches the product resource with colour swatches.",
+        "silvershop-suite/reviews": "Enriches the product resource with aggregate rating fields.",
+        "silvershop-suite/product-gallery": "Enriches the product resource with gallery image URLs."
     },
     "scripts": {
         "test": "vendor/bin/phpunit",
