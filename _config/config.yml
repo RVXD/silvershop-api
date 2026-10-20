@@ -31,7 +31,7 @@ SilverShop\Page\Product:
 ---
 Name: silvershop-api-brands
 Only:
-  moduleexists: 'silvershop/brands'
+  moduleexists: 'silvershop-suite/brands'
 ---
 SilverShop\Api\Serializer\ProductSerializer:
   extensions:
@@ -40,7 +40,7 @@ SilverShop\Api\Serializer\ProductSerializer:
 ---
 Name: silvershop-api-colors
 Only:
-  moduleexists: 'silvershop/colors'
+  moduleexists: 'silvershop-suite/colors'
 ---
 SilverShop\Api\Serializer\ProductSerializer:
   extensions:
@@ -49,7 +49,7 @@ SilverShop\Api\Serializer\ProductSerializer:
 ---
 Name: silvershop-api-reviews
 Only:
-  moduleexists: 'silvershop/reviews'
+  moduleexists: 'silvershop-suite/reviews'
 ---
 SilverShop\Api\Serializer\ProductSerializer:
   extensions:
@@ -58,7 +58,7 @@ SilverShop\Api\Serializer\ProductSerializer:
 ---
 Name: silvershop-api-gallery
 Only:
-  moduleexists: 'silvershop/product-gallery'
+  moduleexists: 'silvershop-suite/product-gallery'
 ---
 SilverShop\Api\Serializer\ProductSerializer:
   extensions:
@@ -67,7 +67,7 @@ SilverShop\Api\Serializer\ProductSerializer:
 ---
 Name: silvershop-api-downloads
 Only:
-  moduleexists: 'silvershop/downloads'
+  moduleexists: 'silvershop-suite/downloads'
 ---
 SilverShop\Api\Serializer\ProductSerializer:
   extensions:
@@ -76,7 +76,7 @@ SilverShop\Api\Serializer\ProductSerializer:
 ---
 Name: silvershop-api-search
 Only:
-  moduleexists: 'silvershop/search'
+  moduleexists: 'silvershop-suite/search'
 ---
 SilverShop\Api\Resource\ResourceRegistry:
   resources:
