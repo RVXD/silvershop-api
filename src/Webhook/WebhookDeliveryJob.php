@@ -7,11 +7,18 @@ namespace SilverShop\Api\Webhook;
 use Symbiote\QueuedJobs\Services\AbstractQueuedJob;
 use Symbiote\QueuedJobs\Services\QueuedJob;
 
+// queuedjobs is an OPTIONAL dependency. Guard the class definition so this file is safe to autoload without it —
+// SilverStripe's config scanner autoloads every class in the manifest, which would otherwise fatally fail on the
+// missing parent. When queuedjobs is absent the job is simply not declared, class_exists() returns false and the
+// scanner skips it; WebhookService::deliver() then falls back to delivering the webhook inline.
+if (!class_exists(AbstractQueuedJob::class)) {
+    return;
+}
+
 /**
- * Delivers a single webhook POST as a background job. Extends symbiote/queuedjobs' {@link AbstractQueuedJob}, so this
- * class is only ever autoloaded when queuedjobs is installed — {@link WebhookService::deliver()} guards its
- * instantiation behind a `class_exists(QueuedJobService::class)` check, keeping the base module graphql/queuedjobs-free
- * and safe to run without the optional dependency.
+ * Delivers a single webhook POST as a background job, extending symbiote/queuedjobs' {@link AbstractQueuedJob}.
+ * queuedjobs is optional (see the guard above): the base module runs without it and {@link WebhookService::deliver()}
+ * then delivers inline, guarding its use of the queue behind a `class_exists(QueuedJobService::class)` check.
  *
  * @property string $event
  * @property string $url
